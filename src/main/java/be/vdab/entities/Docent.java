@@ -17,7 +17,7 @@ import be.vdab.enums.Geslacht;
 @Entity
 @Table(name = "docenten")
 public class Docent implements Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +28,7 @@ public class Docent implements Serializable {
 	private long rijksRegisterNr;
 	@Enumerated(EnumType.STRING)
 	private Geslacht geslacht;
+	
 
 	public Docent(String voornaam, String familienaam, BigDecimal wedde, Geslacht geslacht, long rijksRegisterNr) {
 		setVoornaam(voornaam);
@@ -127,5 +128,6 @@ public class Docent implements Serializable {
 	public Geslacht getGeslacht() {
 		return geslacht;
 	}
+	
 
 }

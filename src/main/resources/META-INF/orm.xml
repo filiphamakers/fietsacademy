@@ -17,6 +17,11 @@
 			set d.wedde = d.wedde * :factor
 		</query>
 	</named-query>
+	<named-query name='Docent.findByRijksRegisterNr'>
+		<query>
+	   		select d from Docent d where d.rijksRegisterNr = :rijksRegisterNr
+	  	</query>
+	</named-query>
 	<named-query name='Cursus.findByNaamContains'>
 		<query>
 			select c from Cursus c where c.naam like :zoals order by c.naam
@@ -27,7 +32,7 @@
 			select c from Campus c where c.adres.gemeente = :gemeente order by c.naam
 		</query>
 	</named-query>
-	<named-query name='Campus.findAll'> 
+	<named-query name='Campus.findAll'>
 		<query>
 			select c from Campus c order by c.naam
 		</query>
